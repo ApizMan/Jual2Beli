@@ -8,7 +8,7 @@
                 <li class="item-link"><span>Cart</span></li>
             </ul>
         </div>
-        <div class=" main-content-area">            
+        <div class=" main-content-area">
             <div class="wrap-iten-in-cart">
                 @if(Session::has('success_message'))
                     <div class="alert alert-success">
@@ -18,7 +18,7 @@
                 @if(Cart::count() > 0)
                 <h3 class="box-title">Products Name</h3>
                 <ul class="products-cart">
-                    @foreach (Cart::content() as $item)  
+                    @foreach (Cart::content() as $item)
                     <li class="pr-cart-item">
                         <div class="product-image">
                             <figure><img src="{{ asset('assets/images/products') }}/{{ $item->model->image }}" alt="{{ $item->model->name }}"></figure>
@@ -45,8 +45,8 @@
                                 <i class="fa fa-times-circle" aria-hidden="true"></i>
                             </a>
                         </div>
-                    </li> 
-                    @endforeach                   
+                    </li>
+                    @endforeach
                 </ul>
                 @else
                     <p>No item in Cart</p>

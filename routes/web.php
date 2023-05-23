@@ -37,6 +37,8 @@ Route::get('/', HomeComponent::class);
 
 Route::get('/shop', ShopComponent::class);
 
+Route::post('/cart/{id}/delete', 'App\Http\Controllers\ShopController@delete');
+
 Route::get('/cart', CartComponent::class)->name('product.cart');
 
 Route::get('/checkout', CheckoutComponent::class);
