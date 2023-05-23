@@ -145,7 +145,8 @@
 
                             <div class="wrap-logo-top left-section">
                                 <a href="{{ url('/') }}" class="link-to-home"><img
-                                        src="{{ asset('assets/images/logo-Jual2Beli.png') }}" alt="mercado" style="width: 100px; height:100px"></a>
+                                        src="{{ asset('assets/images/logo-Jual2Beli.png') }}" alt="mercado"
+                                        style="width: 100px; height:100px"></a>
                             </div>
 
                             @livewire('header-search-component')
@@ -189,13 +190,13 @@
                                 <ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu"
                                     data-menuname="Sale Info">
                                     <li class="menu-item"><a class="link-term"></a></li>
-                                    <li class="menu-item"><a href="#section1" class="link-term">Weekly Featured</a><span
+                                    <li class="menu-item"><a href="/#section1" class="link-term">Weekly Featured</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#section2" class="link-term">Hot Sale items</a><span
+                                    <li class="menu-item"><a href="/#section2" class="link-term">Hot Sale items</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#section3" class="link-term">Top new items</a><span
+                                    <li class="menu-item"><a href="/#section3" class="link-term">Top new items</a><span
                                             class="nav-label hot-label">hot</span></li>
-                                    <li class="menu-item"><a href="#section4" class="link-term">Categories</a><span
+                                    <li class="menu-item"><a href="/#section4" class="link-term">Categories</a><span
                                             class="nav-label hot-label">hot</span></li>
                                 </ul>
                             </div>
@@ -218,10 +219,17 @@
                                     <li class="menu-item">
                                         <a href="{{ url('/cart') }}" class="link-term mercado-item-title">Cart</a>
                                     </li>
-                                    <li class="menu-item">
-                                        <a href="{{ url('/checkout') }}"
-                                            class="link-term mercado-item-title">Checkout</a>
-                                    </li>
+                                    @auth
+                                        {{-- // Authorised. --}}
+                                        <li class="menu-item">
+                                            <a href="{{ url('/checkout') }}"
+                                                class="link-term mercado-item-title">Checkout</a>
+                                        </li>
+                                    @else
+                                        {{-- // Not authorised. --}}
+                                        <li class="menu-item">
+                                        </li>
+                                    @endauth
                                     <li class="menu-item">
                                         <a href="{{ url('/contact-us') }}" class="link-term mercado-item-title">Contact
                                             Us</a>
