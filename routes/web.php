@@ -37,9 +37,11 @@ Route::get('/', HomeComponent::class);
 
 Route::get('/shop', ShopComponent::class);
 
+Route::post('/cart/{id}/delete', 'App\Http\Controllers\ShopController@delete');
+
 Route::get('/cart', CartComponent::class)->name('product.cart');
 
-Route::get('/checkout', CheckoutComponent::class);
+// Route::get('/checkout', CheckoutComponent::class);
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
@@ -72,4 +74,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 // Dashboard particular para administradores
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/checkout', CheckoutComponent::class)->name('checkout-component');
 });
