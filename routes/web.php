@@ -57,6 +57,10 @@ Route::get('/return-policy', ReturnPolicyComponent::class);
 
 Route::get('/terms-conditions', TermsConditionsComponent::class);
 
+Route::get('/viewcheck','App\Http\Controllers\CheckoutControler@index');
+Route::post('/viewcheck/create','App\Http\Controllers\CheckoutControler@create');
+Route::get('/addcheck', function () {
+    return view('\livewire.Checkout.AddCheck');});
 /*
 // Dashboard igual para todos los tipos de usuario
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

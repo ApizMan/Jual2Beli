@@ -283,5 +283,4 @@
         <!--end main content area-->
     </div>
     <!--end container-->
-
 </main>
