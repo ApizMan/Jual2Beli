@@ -222,8 +222,7 @@
                                     @auth
                                         {{-- // Authorised. --}}
                                         <li class="menu-item">
-                                            <a href="{{ url('/checkout') }}"
-                                                class="link-term mercado-item-title">Checkout</a>
+                                            <a href="{{ url('/addcheck') }}" class="link-term mercado-item-title">Checkout</a>
                                         </li>
                                     @else
                                         {{-- // Not authorised. --}}

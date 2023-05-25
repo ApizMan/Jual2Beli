@@ -22,7 +22,7 @@ class Products extends Seeder
             DB::table('products') -> insert([
                 'name' => $faker->name,
                 'short_description' => $faker->text,
-                'type_sale'=>$faker->randomElement(['Sales', 'New', 'Best Seller']),
+                'type_sale'=>$faker->randomElement(['Sales']),
                 'color_type_sale' => $faker -> randomElement(['#ff2832', '#365db5', '#00bf3f']),
                 'slug' => $faker->slug,
                 'description' => $faker->text,
