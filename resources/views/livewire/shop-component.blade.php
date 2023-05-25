@@ -85,8 +85,16 @@
                                     <div class="product-info">
                                         <a href="{{ route('product.details', ['slug' => $product->slug]) }}"
                                             class="product-name"><span>{{ $product->name }}</span></a>
-                                        <div class="wrap-price"><span
-                                                class="product-price">{{ $product->regular_price }}</span></div>
+                                            @if ($product->type_sale == 'Sales')
+                                            <div class="wrap-price"><ins>
+                                                    <p class="product-price">{{ $product->sale_price }}</p>
+                                                </ins> <del>
+                                                    <p class="product-price">{{ $product->regular_price }}</p>
+                                                </del></div>
+                                        @else
+                                            <div class="wrap-price"><span class="product-price">{{ $product->regular_price }}</span>
+                                            </div>
+                                        @endif
                                         <a class="btn add-to-cart" href="#"
                                             wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add
                                             To Cart</a>
